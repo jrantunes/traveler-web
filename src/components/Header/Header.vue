@@ -1,6 +1,10 @@
 <template>
-  <header>
-    <img src="@/assets/logo.svg" alt="Traveler" />
+  <header :class="!isHomePath ? 'white-background' : ''">
+    <div>
+      <RouterLink to="/">
+        <img src="@/assets/logo.svg" alt="Traveler" />
+      </RouterLink>
+    </div>
   </header>
 </template>
 
@@ -9,6 +13,18 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Header",
+  data() {
+    return {
+      isHomePath: true,
+    };
+  },
+  mounted() {
+    if (this.$router.currentRoute.value.name === "home") {
+      this.isHomePath = true;
+    } else {
+      this.isHomePath = false;
+    }
+  },
 });
 </script>
 
@@ -18,15 +34,23 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  width: 1130px;
   background-color: var(--background);
-  display: flex;
-  margin: 0 auto;
-  padding: 1.5rem;
 
-  img {
-    width: 156px;
-    cursor: pointer;
+  &.white-background {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray);
+  }
+
+  div {
+    width: 1130px;
+    display: flex;
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    img {
+      width: 156px;
+      cursor: pointer;
+    }
   }
 }
 </style>

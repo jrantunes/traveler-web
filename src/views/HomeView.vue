@@ -1,41 +1,41 @@
 <template>
-  <Header />
-  <main>
-    <section>
-      <div>
-        <h1>Viva uma grande aventura</h1>
+  <MainContainer>
+    <div class="content">
+      <section>
+        <div>
+          <h1>Viva uma grande aventura</h1>
 
-        <p>
-          Descubra locais incríveis para se visitar em cidades maravilhosas de
-          Santa Catarina.
-        </p>
+          <p>
+            Descubra locais incríveis para se visitar em cidades maravilhosas de
+            Santa Catarina.
+          </p>
 
-        <button>Descobrir todos os lugares</button>
-      </div>
-    </section>
-    <HomeCityList />
-  </main>
+          <RouterLink to="/cities">
+            <button>Descobrir todos os lugares</button>
+          </RouterLink>
+        </div>
+      </section>
+      <HomeCityList />
+    </div>
+  </MainContainer>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { Header, HomeCityList } from "@/components";
+import { HomeCityList, MainContainer } from "@/components";
 
 export default defineComponent({
   name: "HomeView",
   components: {
-    Header,
     HomeCityList,
+    MainContainer,
   },
 });
 </script>
 
 <style lang="scss" scoped>
-main {
-  max-width: 1130px;
-  width: 100%;
+.content {
   display: flex;
-  margin: calc(5rem + 12px) auto 0;
 
   section:first-of-type {
     flex: 7;
@@ -46,15 +46,15 @@ main {
       max-width: 317px;
 
       h1 {
-        font: 600 70px Barlow, sans-serif;
+        font: 600 max(55px, 5.75vw) Barlow, sans-serif;
         line-height: 64px;
         color: var(--blue-700);
       }
 
       p {
         color: var(--gray-200);
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
         margin-top: 40px;
       }
 
