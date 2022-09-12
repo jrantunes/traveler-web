@@ -1,6 +1,12 @@
 <template>
   <div class="city-list">
-    <CityCard v-for="city in cities" :key="city.id" :city="city" />
+    <RouterLink
+      v-for="city in cities"
+      :key="city.id"
+      :to="{ name: 'city', params: { id: city.id } }"
+    >
+      <CityCard :city="city" />
+    </RouterLink>
   </div>
 </template>
 
