@@ -1,3 +1,4 @@
-import HomeView from "./HomeView.vue";
+import HomeView from "./Home/HomeView.vue";
+import CitiesView from "./Cities/CitiesView.vue";
 
-export { HomeView };
+export { HomeView, CitiesView };

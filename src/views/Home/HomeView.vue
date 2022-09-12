@@ -22,7 +22,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { HomeCityList, MainContainer } from "@/components";
+import { MainContainer } from "@/components";
+import { HomeCityList } from "./components";
 
 export default defineComponent({
   name: "HomeView",

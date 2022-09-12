@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import CityCard from "../CityCard/CityCard.vue";
+import { CityCard } from "@/components";
 import citiesData from "@/data/cityList";
 
 export default defineComponent({
@@ -45,7 +45,7 @@ section {
   padding-right: 1.5rem;
   display: flex;
   flex-direction: column;
-  max-height: calc(100vh - 5.75rem);
+  max-height: calc(100vh - 5.875rem);
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -68,7 +68,9 @@ section {
   }
 
   > div {
+    justify-content: flex-end;
     flex: 1;
+    width: 100%;
     display: flex;
 
     div {
