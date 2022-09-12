@@ -9,7 +9,11 @@
         />
       </div>
       <div>
-        <CityCard v-for="city in cities.slice(3)" :key="city.id" :city="city" />
+        <CityCard
+          v-for="city in cities.slice(3, 6)"
+          :key="city.id"
+          :city="city"
+        />
       </div>
     </div>
 
@@ -46,8 +50,6 @@ section {
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
-    /* width: 6px; */
-    /* height: 6px; */
     background-color: transparent;
   }
 

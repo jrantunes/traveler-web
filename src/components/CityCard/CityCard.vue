@@ -37,7 +37,7 @@ article {
   flex-direction: column;
 
   img {
-    height: 220px;
+    height: 200px;
     width: 100%;
 
     object-fit: cover;
