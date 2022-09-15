@@ -1,5 +1,5 @@
 <template>
-  <header :class="!isHomePath ? 'white-background' : ''">
+  <header :class="{ 'white-background': !isHomePath }">
     <div>
       <RouterLink to="/">
         <img src="@/assets/logo.svg" alt="Traveler" />

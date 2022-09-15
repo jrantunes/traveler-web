@@ -42,6 +42,11 @@ export default defineComponent({
     FilterOptions,
     CitiesList,
   },
+  props: {
+    id: {
+      type: String,
+    },
+  },
   data() {
     return {
       activeFilter: "ALL",

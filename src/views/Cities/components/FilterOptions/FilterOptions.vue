@@ -1,12 +1,12 @@
 <template>
   <div>
     <span
-      :class="activeFilter === 'ALL' ? 'active' : ''"
+      :class="{ active: activeFilter === 'ALL' }"
       @click="handleChangeFilter('ALL')"
       >Todas</span
     >
     <span
-      :class="activeFilter === 'MOST_ACCESSED' ? 'active' : ''"
+      :class="{ active: activeFilter === 'MOST_ACCESSED' }"
       @click="handleChangeFilter('MOST_ACCESSED')"
       >Mais acessadas</span
     >
