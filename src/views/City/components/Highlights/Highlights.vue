@@ -3,22 +3,28 @@
     <h1>Top avaliados</h1>
 
     <div class="list">
-      <CityCard v-for="city in cities" :key="city.id" :city="city" />
+      <Card
+        v-for="location in locations"
+        :key="location.id"
+        :location="location"
+        cardType="DETAILED"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import CityCard from "@/components/CityCard/CityCard.vue";
-import cityList from "@/data/cityList";
+import locationsList from "@/data/locationsList";
+import { Card } from "@/components";
+import ILocation from "@/interfaces/ILocation";
 
 export default defineComponent({
   name: "Highlights",
-  components: { CityCard },
+  components: { Card },
   data() {
     return {
-      cities: cityList.slice(0, 4),
+      locations: locationsList.slice(0, 4) as ILocation[],
     };
   },
 });

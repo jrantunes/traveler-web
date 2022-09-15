@@ -5,20 +5,20 @@
       :key="city.id"
       :to="{ name: 'city', params: { id: city.id } }"
     >
-      <CityCard :city="city" />
+      <Card :city="city" />
     </RouterLink>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { CityCard } from "@/components";
+import { Card } from "@/components";
 import citiesData from "@/data/cityList";
 
 export default defineComponent({
   name: "CitiesList",
   components: {
-    CityCard,
+    Card,
   },
   props: {
     activeFilter: {

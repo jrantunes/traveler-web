@@ -1,5 +1,5 @@
 import Header from "./Header/Header.vue";
-import CityCard from "./CityCard/CityCard.vue";
+import Card from "./Card/Card.vue";
 import MainContainer from "./MainContainer/MainContainer.vue";
 
-export { Header, CityCard, MainContainer };
+export { Header, Card, MainContainer };

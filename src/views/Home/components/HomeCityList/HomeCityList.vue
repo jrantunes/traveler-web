@@ -2,18 +2,10 @@
   <section>
     <div>
       <div>
-        <CityCard
-          v-for="city in cities.slice(0, 3)"
-          :key="city.id"
-          :city="city"
-        />
+        <Card v-for="city in cities.slice(0, 3)" :key="city.id" :city="city" />
       </div>
       <div>
-        <CityCard
-          v-for="city in cities.slice(3, 6)"
-          :key="city.id"
-          :city="city"
-        />
+        <Card v-for="city in cities.slice(3, 6)" :key="city.id" :city="city" />
       </div>
     </div>
 
@@ -23,13 +15,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { CityCard } from "@/components";
+import { Card } from "@/components";
 import citiesData from "@/data/cityList";
 
 export default defineComponent({
   name: "HomeCityList",
   components: {
-    CityCard,
+    Card,
   },
   data() {
     return {

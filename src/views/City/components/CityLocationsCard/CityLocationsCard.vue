@@ -16,8 +16,8 @@
 </template>
 
 <script lang="ts">
+import { LocationType } from "@/interfaces/ILocation";
 import { defineComponent, PropType } from "vue";
-import { LocationType } from "../../types";
 
 export default defineComponent({
   name: "CityLocationsCard",
