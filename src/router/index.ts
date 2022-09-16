@@ -20,6 +20,13 @@ const routes: Array<RouteRecordRaw> = [
       import(/* webpackChunkName: "city" */ "../views/City/CityView.vue"),
     props: true,
   },
+  {
+    path: "/locations/:id",
+    name: "location",
+    component: () =>
+      import(/* webpackChunkName: "city" */ "../views/City/CityView.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({

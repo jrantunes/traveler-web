@@ -36,6 +36,7 @@ header {
   left: 0;
   right: 0;
   background-color: var(--background);
+  height: 5.4375rem;
 
   &.white-background {
     background-color: var(--white);
@@ -43,13 +44,13 @@ header {
   }
 
   div {
-    width: 1130px;
+    width: 1280px;
     display: flex;
     margin: 0 auto;
     padding: 1.5rem;
 
     img {
-      width: 156px;
+      width: 9.75rem;
       cursor: pointer;
     }
   }

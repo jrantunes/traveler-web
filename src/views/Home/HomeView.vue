@@ -47,7 +47,8 @@ export default defineComponent({
       max-width: 317px;
 
       h1 {
-        font: 600 max(55px, 5.75vw) Barlow, sans-serif;
+        /* font: 600 max(55px, 5.75vw) Barlow, sans-serif; */
+        font: 600 clamp(55px, 5.75vw, 80px) Barlow, sans-serif;
         line-height: 64px;
         color: var(--blue-700);
       }

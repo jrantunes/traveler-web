@@ -11,26 +11,31 @@
       <Highlights />
       <HighlightBanner />
       <div class="filter-container">
-        <h1>Selecione uma cidade</h1>
+        <h1>Conheça todos</h1>
         <FilterOptions
           @onChangeFilter="handleChangeFilter"
           :activeFilter="activeFilter"
         />
       </div>
 
-      <CitiesList :activeFilter="activeFilter" />
+      <CardsList
+        :locations="locations"
+        cardType="DETAILED"
+        :activeFilter="activeFilter"
+      />
     </div>
   </MainContainer>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { MainContainer } from "@/components";
+import { MainContainer, CardsList } from "@/components";
+import locationsList from "@/data/locationsList";
+import ILocation from "@/interfaces/ILocation";
 import About from "./components/About/About.vue";
 import Highlights from "./components/Highlights/Highlights.vue";
 import HighlightBanner from "./components/HighlightBanner/HighlightBanner.vue";
 import FilterOptions from "../Cities/components/FilterOptions/FilterOptions.vue";
-import CitiesList from "../Cities/components/CitiesList/CitiesList.vue";
 
 export default defineComponent({
   name: "CityView",
@@ -40,7 +45,7 @@ export default defineComponent({
     Highlights,
     HighlightBanner,
     FilterOptions,
-    CitiesList,
+    CardsList,
   },
   props: {
     id: {
@@ -50,6 +55,7 @@ export default defineComponent({
   data() {
     return {
       activeFilter: "ALL",
+      locations: locationsList as ILocation[],
     };
   },
   methods: {
@@ -87,6 +93,15 @@ main {
         color: var(--blue-700);
         font: 600 32px Barlow, sans-serif;
         margin-bottom: 16px;
+      }
+
+      @media only screen and (max-width: 630px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        h2 {
+          margin-bottom: 20px;
+        }
       }
     }
   }

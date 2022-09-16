@@ -9,26 +9,28 @@
         />
       </div>
 
-      <CitiesList :activeFilter="activeFilter" />
+      <CardsList :cities="cities" :activeFilter="activeFilter" />
     </div>
   </MainContainer>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { MainContainer } from "@/components";
-import { FilterOptions, CitiesList } from "./components";
+import { MainContainer, CardsList } from "@/components";
+import citiesList from "@/data/cityList";
+import { FilterOptions } from "./components";
 
 export default defineComponent({
   name: "CitiesView",
   components: {
     MainContainer,
     FilterOptions,
-    CitiesList,
+    CardsList,
   },
   data() {
     return {
       activeFilter: "ALL",
+      cities: citiesList,
     };
   },
   methods: {

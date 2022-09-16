@@ -29,29 +29,28 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .about-container {
   display: flex;
-
   .city-info {
     max-width: 500px;
 
     h1 {
       color: var(--blue-700);
-      font: 600 50px Barlow, sans-serif;
+      font: 600 clamp(40px, 4vw, 50px) Barlow, sans-serif;
     }
 
     p {
       margin-top: 40px;
       color: var(--blue-700);
-      font-size: 18px;
-      line-height: 28px;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
 
       &:last-of-type {
         margin-top: 32px;
         color: var(--gray-200);
-        font-size: 14px;
-        line-height: 24px;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
       }
     }
   }
@@ -64,6 +63,47 @@ export default defineComponent({
 
     div + div {
       margin-left: 16px;
+    }
+
+    @media only screen and (max-width: 460px) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .container {
+        margin-left: 0;
+        max-width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        div:nth-child(2) {
+          flex: 1;
+          border-top: none;
+          border-left: 1px solid var(--gray);
+        }
+
+        p {
+          margin-top: 4px;
+        }
+
+        & + div {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1040px) {
+    flex-direction: column;
+    align-items: center;
+
+    .city-info {
+      text-align: center;
+    }
+
+    .city-cards {
+      margin: 40px 0 0;
     }
   }
 }

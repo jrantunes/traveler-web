@@ -53,10 +53,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .container {
+  flex: 1;
   background-color: var(--white);
   border: 1px solid var(--gray);
   border-radius: 20px;
-  width: 160px;
+  max-width: 160px;
+  width: 100%;
 
   > div {
     padding: 2rem;

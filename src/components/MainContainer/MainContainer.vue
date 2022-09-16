@@ -19,7 +19,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 main {
-  max-width: 1130px;
+  max-width: 1280px;
   width: 100%;
   margin: calc(5rem + 12px) auto 0;
 }

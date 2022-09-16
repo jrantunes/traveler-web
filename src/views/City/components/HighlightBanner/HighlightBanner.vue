@@ -89,5 +89,21 @@ export default defineComponent({
       object-fit: cover;
     }
   }
+
+  @media only screen and (max-width: 850px) {
+    flex-direction: column-reverse;
+    height: 100%;
+
+    .info-container {
+      border-radius: 0 0 20px 20px;
+
+      padding: 3rem;
+    }
+
+    .image-container {
+      width: 100%;
+      height: 280px;
+    }
+  }
 }
 </style>

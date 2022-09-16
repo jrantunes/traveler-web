@@ -35,8 +35,7 @@
 import { defineComponent, PropType } from "vue";
 import ICity from "@/interfaces/ICity";
 import ILocation from "@/interfaces/ILocation";
-
-type CardTypes = "NORMAL" | "DETAILED";
+import { CardTypes } from "../types";
 
 export default defineComponent({
   name: "Card",
@@ -149,6 +148,7 @@ article {
 
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     padding: 18px 14px;
     border-radius: 10px;
